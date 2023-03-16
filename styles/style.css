@@ -1,0 +1,290 @@
+/* CSS Document */
+*, *::after, *::before {
+  box-sizing:border-box;  
+}
+
+:root {
+  --lijfkleur: #538687;
+  --lijfschaduw: #336667;
+  --subkleur: #F3E38E;
+}
+
+html, body {
+  height:100%;
+  margin:0;
+}
+
+body {
+  background-image: url("../images/background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+main {
+  position: absolute;
+  left: calc(50% - 25.5em / 2);
+  top: 8em;
+}
+
+.hoofd {
+  animation: rotate 5s linear 0s infinite alternate none;
+  width: 22.5em;
+  height: 15em;
+  position: relative;
+  left: calc(50% - 22.5em / 2);
+  border-radius: 50%;
+  z-index: 2;
+  border: 4px solid black;
+  z-index: 3;
+  transform-origin: bottom;
+}
+
+.gezicht {
+  position: relative;
+  background-color: #538687;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-image: radial-gradient(350px 200px at center top, var(--lijfkleur) 95%, black 95%, black 97%, var(--subkleur) 92%);
+}
+
+.oor {
+  position: absolute;
+  width: 12.5em;
+	height:12.5em;
+	background-color:black;
+	border-radius:.5em 9em .5em 9em;
+	clip-path:polygon(0 0, 100% 0, 0 100%, 0 0);
+}
+
+.oor > div {
+  width:13em;
+	height:13em;
+	border-radius:.5em 9em .5em 9em;
+	transform:skew(2deg, 2deg) scale(.94);
+	clip-path:polygon(0 0, 100% 0, 0 100%, 0 0);
+}
+
+
+.oor.links {
+  bottom: 6em;
+  left: 1em;
+  transform:rotate(40deg) skew(10deg, 10deg);
+}
+
+.oor.links div {
+  background-image:linear-gradient(
+		-130deg,
+		var(--lijfschaduw) 5.5em,
+		var(--lijfkleur) 5.5em
+	);
+}
+
+.oor.rechts {
+  bottom: 6em;
+  left: 8.7em;
+  transform:rotate(50deg) skew(10deg, 10deg);
+}
+
+.oor.rechts div {
+  background-color: var(--lijfkleur);
+}
+
+.tand {
+  position: relative;
+	width: 1.8em;
+	height: 2em;
+	background: black;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.tand > div {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  right: 3px;
+  bottom: 1px; 
+  background: white;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.tand.links {
+  left: 7.8em;
+  bottom: -9.9em;
+  transform: rotate(4deg);
+}
+
+.tand.rechts {
+  left: 12em;
+  bottom: -7.9em;
+  transform: rotate(-4deg);
+}
+
+.oog {
+  position: absolute;
+  background-color: white;
+  border-radius: 100%;
+  border: 2px solid black;
+  width: 3.2em;
+  height: 4.6em;
+}
+
+.oog.links {
+  left: 5.4em;
+  bottom: 5.5em;
+  background-image: radial-gradient(farthest-corner at 32px 25px, black 6%, white 6%);
+  transform: rotate(5deg);
+}
+
+.oog.rechts {
+  left: 13.2em;
+  bottom: 5.5em;
+  background-image: radial-gradient(farthest-corner at 18px 25px, black 6%, white 6%);
+  transform: rotate(-5deg);
+}
+
+.lijf {
+  background-color: black;
+  position: absolute;
+  border-radius:25% 25% 20% 20% / 60% 60% 25% 25% ;
+  width: 25.5em;
+  height: 17.9em;
+  left: calc(50% - 25.5em / 2);
+  top:calc(50% - -12em / 2);
+  z-index: 0;
+}
+
+.lijf .lijf-inner {
+  background-color: var(--lijfkleur);
+  position: absolute;
+  border-radius:25% 25% 20% 20% / 60% 60% 25% 25% ;
+  width: 25.1em;
+  left: 0.2em;
+  top: 0.1em;
+  height: 17.5em;
+}
+
+.onderkant {
+  background-color: black;
+  position: absolute;
+  top: -11.2em;
+  left: -15.1em;
+  width: 880px;
+  height: 500px;
+  clip-path: polygon(28% 83%, 26% 89%, 30% 89%, 29% 91%, 31% 91%, 31% 96%, 34% 94%, 35% 98%, 39% 95%, 40% 100%, 43% 96%, 44% 99%, 45% 96%, 47% 99%, 49% 96%, 52% 99%, 52% 96%, 57% 99%, 58% 95%, 60% 97%, 61% 94%, 64% 96%, 64% 93%, 70% 94%, 69% 92%, 72% 92%, 71% 90%, 74% 89%, 73% 87%, 76% 87%, 74% 83%, 76% 81%, 73% 80%);
+}
+
+.schaduw {
+  position: absolute;
+  top: -11.2em;
+  left: -14.8em;
+  width: 865px;
+  height: 499px;
+  transform: scale(.98);
+  background-color: var(--lijfkleur);
+  clip-path: polygon(28% 83%, 26% 89%, 30% 89%, 29% 91%, 31% 91%, 31% 96%, 34% 94%, 35% 98%, 39% 95%, 40% 100%, 43% 96%, 44% 99%, 45% 96%, 47% 99%, 49% 96%, 52% 99%, 52% 96%, 57% 99%, 58% 95%, 60% 97%, 61% 94%, 64% 96%, 64% 93%, 70% 94%, 69% 92%, 72% 92%, 71% 90%, 74% 89%, 73% 87%, 76% 87%, 74% 83%, 76% 81%, 73% 80%);
+}
+
+.rondje {
+  position: absolute;
+  background-color: var(--subkleur);
+  clip-path: circle(50% at 50% 50%);
+  border: 2px solid black;
+  border-radius: 100%;
+  width: 8em;
+  height: 8em;
+  transform: translateX(-50%);
+  left: 50%;
+}
+
+.armen {
+  animation: rotate-arm 3s linear 0s infinite alternate none;
+  position: absolute;
+  width: 25.7em;
+  height: 18em;
+  left: calc(50% - 12.8em);
+  top: calc(50% - -6em);
+}
+
+.arm {
+  position: absolute;
+  border-radius: 27% 0% 0% 0% / 64% 38% 10% 10% ;
+  background-color: black;
+  width: 70px;
+  height: 200px;
+}
+
+.arm-schaduw-links {
+  position: absolute;
+  border-radius: 27% 0% 0% 0% / 64% 38% 10% 10%;
+  background-color: var(--lijfkleur);
+  width: 70px;
+  height: 200px;
+  left: 3px;
+  top: 0px;
+  z-index: 2;
+  transform: rotate(34deg);
+}
+
+.arm-schaduw-rechts {
+  transform: rotate(145deg) scale(1, -1);
+  right: 2px;
+  position: absolute;
+  border-radius: 27% 0% 0% 0% / 64% 38% 10% 10%;
+  background-color: var(--lijfkleur);
+  width: 70px;
+  height: 200px;
+  z-index: 2;
+}
+
+.arm.links {
+  transform: rotate(35deg);
+  filter: drop-shadow(5px 2px 0px black);
+}
+
+.arm.rechts {
+  transform: rotate(145deg) scale(1, -1);
+  right: 0;
+  filter: drop-shadow(5px 2px 0px black);
+}
+
+.hand {
+  position: absolute;
+  background-color:black;
+  height: 10em;
+  width: 25em;
+  top: 5.5em;
+  left: -10em;
+  transform: rotate(-20deg);
+  clip-path: polygon(54% 72%, 55% 82%, 49% 76%, 46% 86%, 44% 76%, 40% 86%, 39% 75%, 34% 77%, 35% 69%, 31% 63%, 38% 59%);
+}
+
+.hand-schaduw {
+  position: absolute;
+    background-color: var(--lijfkleur);
+    height: 9.8em;
+    width: 25.8em;
+    top: 5.9em;
+    left: -10.4em;
+    transform: scale(0.90) rotate(-19deg);
+    z-index: 2;
+    clip-path: polygon(54% 72%, 55% 82%, 49% 76%, 46% 86%, 44% 76%, 40% 86%, 39% 75%, 34% 77%, 35% 69%, 31% 63%, 38% 59%);
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(-5deg);
+  }
+  to {
+    transform: rotate(5deg);
+  }
+}
+
+@keyframes rotate-arm {
+  from {
+    transform: rotate(-2deg);
+  }
+  to {
+    transform: rotate(2deg);
+  }
+}
